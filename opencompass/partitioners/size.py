@@ -151,6 +151,7 @@ class SizePartitioner(BasePartitioner):
         split_configs = []
         abbr = dataset_abbr_from_cfg(dataset_cfg)
         step = self.max_task_size // num_repeats
+        step = self.max_task_size
         # evenly distribute the task
         step = math.ceil(dataset_size / math.ceil(dataset_size / step))
         for part, i in enumerate(range(0, dataset_size, step)):
